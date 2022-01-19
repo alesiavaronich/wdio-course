@@ -7,10 +7,10 @@ describe('IFrame', () => {
         const iframe = await $('#advanced_iframe');
         await browser.switchToFrame(iframe);
 
-        // verify that log exists
+        // verify that logo exists
         await expect($('#site-logo')).toExist();
 
-        // switch to parent frame and verify logo exists
+        // switch to parent frame and verify that h1 exists & contains correct text
         await browser.switchToParentFrame();
         await expect($('h1.tg-page-header__title')).toHaveText('IFrame Sample');
     });

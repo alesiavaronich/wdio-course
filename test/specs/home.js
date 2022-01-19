@@ -40,8 +40,11 @@ describe("Home", () => {
 
   it("Click Logo & assert url DOES NOT contain get-started text", async () => {
     allureReporter.addFeature("Logo Verification");
-    
-    // Click logo
+
+    // Click get started button
+    await HomePage.btnGetStarted.click();
+
+    // Click logo to return to the Home page
     await HomePage.imageLogo.click();
 
     // Assert url does not contain get-started text
